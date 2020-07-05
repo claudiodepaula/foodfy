@@ -1,0 +1,57 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="content">
+
+        <section class="post">
+            <img src="{{items.image}}" alt="">
+            <h1>{{items.title}}</h1>
+            <p>{{items.author}}</p>
+        </section>
+
+
+        <section class = "section_content"  id = "ingredients">
+            <div class="cook_details_title">
+                <h2>Ingredientes</h2> 
+                <p class="show" id="0">Esconder</p>
+            </div>
+
+            <div class="content_texts">
+            <ul class="cook_details_lists">
+                {% for item in items.ingredients %}
+                <li>{{item}}</li>
+                {% endfor %}
+            </ul>
+            </div>
+        </section>
+
+        <section class = "section_content" id = "how_to_do">
+            <div class = "cook_details_title">
+                <h2>Modo de preparo</h2> 
+                <p class = "show" id = 1>Esconder</p> 
+            </div>
+
+            <div class="content_texts">
+                <ul class = "cook_details_lists" id = "preparation_list">
+                    {% for item in items.preparation %}
+                    <li>{{item}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        
+        <section class = "section_content" id = "additional_information">
+            <div class = "cook_details_title">
+                <h2>Informações adicionais</h2> 
+                <p class = "show" id = 2>Esconder</p>
+            </div>
+
+            <div class = "content_texts" id ="information_text">
+                <p class = "text_show" id = "information_text">{{items.information}}</p>
+            </div>
+        </section>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+<li><a href="/about">Sobre</a></li>
+<li><a href="/recipes"><b>Receitas</b></a></li>
+{% endblock%}
+
+{% block content %}
+<main>
+    <section>
+
+        <div class="cards">
+            {% for item in items %}
+            <div class="card" id={{items.indexOf(item)}}>
+                <div class="card_img">
+                    <img src="{{item.image}}" alt="{{item.title}}">
+                </div>
+                <div class="card_title">
+                    <p>{{item.title}}</p>
+                </div>
+                <div class="card_posted_by">
+                    <p>{{item.author}}</p>
+                </div>
+            </div>
+            {% endfor %}    
+
+            {% for item in items %}
+            <div class="card" id="{{items.indexOf(item)}}">
+                <div class="card_img">
+                    <img src="{{item.image}}" alt="{{item.title}}">
+                </div>
+                <div class="card_title">
+                    <p>{{item.title}}</p>
+                </div>
+                <div class="card_posted_by">
+                    <p>{{item.author}}</p>
+                </div>
+            </div>
+            {% endfor %}     
+        </div>
+    </section>
+</main>
+
+    </div>
+
+
+{% endblock %}
